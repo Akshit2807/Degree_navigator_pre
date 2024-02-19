@@ -2,7 +2,6 @@ import 'package:untitled2/constants/color.dart';
 import 'package:untitled2/constants/size.dart';
 import 'package:untitled2/models/category.dart';
 import 'package:untitled2/screens/course_screen.dart';
-import 'package:untitled2/screens/details_screen.dart';
 import 'package:untitled2/widgets/circle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,11 +18,11 @@ class FeaturedScreen extends StatefulWidget {
 class _FeaturedScreenState extends State<FeaturedScreen> {
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
+    return const AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
         body: Column(
-          children: const [
+          children: [
             AppBar(),
             Body(),
           ],

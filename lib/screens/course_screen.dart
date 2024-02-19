@@ -29,7 +29,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     children: [
                       Align(
                         child: Text(
-                          'Development',
+                          'Semester 1',
                           style: Theme.of(context).textTheme.displayMedium,
                         ),
                       ),
@@ -114,18 +114,18 @@ class CourseContainer extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(course.name),
-                  Text(
-                    "Author ${course.author}",
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
+                  // Text(
+                  //   "Author ${course.author}",
+                  //   style: Theme.of(context).textTheme.bodySmall,
+                  // ),
                   const SizedBox(
                     height: 5,
                   ),
-                  LinearProgressIndicator(
-                    value: course.completedPercentage,
-                    backgroundColor: Colors.black12,
-                    color: kPrimaryColor,
-                  )
+                  // LinearProgressIndicator(
+                  //   value: course.completedPercentage,
+                  //   backgroundColor: Colors.black12,
+                  //   color: kPrimaryColor,
+                  // )
                 ],
               ),
             ),
