@@ -12,23 +12,23 @@ class Category {
 
 List<Category> categoryList = [
   Category(
-    name: 'Development',
+    name: '1st Semester',
     noOfCourses: 55,
-    thumbnail: 'assets/icons/laptop.jpg',
+    thumbnail: 'assets/icons/1sem01.jpg',
   ),
   Category(
-    name: 'Accounting',
+    name: '2nd Semester',
     noOfCourses: 20,
-    thumbnail: 'assets/icons/accounting.jpg',
+    thumbnail: 'assets/icons/2sem01.png',
   ),
   Category(
-    name: 'Photography',
+    name: '3rd Semester',
     noOfCourses: 16,
-    thumbnail: 'assets/icons/photography.jpg',
+    thumbnail: 'assets/icons/3sem02.png',
   ),
   Category(
-    name: 'Product Design',
+    name: '4th Semester',
     noOfCourses: 25,
-    thumbnail: 'assets/icons/design.jpg',
+    thumbnail: 'assets/icons/4sem01.jpg',
   ),
 ];

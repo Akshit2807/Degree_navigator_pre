@@ -118,10 +118,18 @@ class CategoryCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Align(
-              alignment: Alignment.topRight,
-              child: Image.asset(
-                category.thumbnail,
-                height: kCategoryCardImageSize,
+              // alignment: Alignment.topRight,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 4.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(11),
+                  child: Image.asset(
+                    category.thumbnail,
+                    // fit: BoxFit.fill,
+                    // height: kCategoryCardImageSize,
+                    height: MediaQuery.of(context).size.height * 0.15,
+                  ),
+                ),
               ),
             ),
             const SizedBox(

@@ -12,33 +12,33 @@ class Course {
 
 List<Course> courses = [
   Course(
-    author: "DevWheels",
-    name: "Flutter Novice to Ninja",
+    author: "AKAD",
+    name: "Engineering Mathematics",
     thumbnail: "assets/icons/flutter.jpg",
   ),
   Course(
-    author: "DevWheels",
-    name: "React Novice to Ninja",
+    author: "AKAD",
+    name: "Engineering Physics",
     thumbnail: "assets/icons/react.jpg",
   ),
   Course(
-    author: "DevWheels",
-    name: "Node - The complete guide",
+    author: "AKAD",
+    name: "FCP",
     thumbnail: "assets/icons/node.png",
   ),
   Course(
-    author: "DevWheels",
-    name: "Flutter Novice to Ninja",
+    author: "AKAD",
+    name: "FEE",
     thumbnail: "assets/icons/flutter.jpg",
   ),
-  Course(
-    author: "DevWheels",
-    name: "React Novice to Ninja",
-    thumbnail: "assets/icons/react.jpg",
-  ),
-  Course(
-    author: "DevWheels",
-    name: "Node - The complete guide",
-    thumbnail: "assets/icons/node.png",
-  ),
+  // Course(
+  //   author: "AKAD",
+  //   name: "React Novice to Ninja",
+  //   thumbnail: "assets/icons/react.jpg",
+  // ),
+  // Course(
+  //   author: "AKAD",
+  //   name: "Node - The complete guide",
+  //   thumbnail: "assets/icons/node.png",
+  // ),
 ];
