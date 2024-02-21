@@ -79,7 +79,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   height: 3,
                 ),
                 const Text(
-                  "Created by DevWheels",
+                  "Created by DegreeNavigator",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
@@ -217,10 +217,16 @@ class _CustomTabViewState extends State<CustomTabView> {
           color: widget.index == index ? kPrimaryColor : null,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Text(
-          _tags[index],
-          style: TextStyle(
-            color: widget.index != index ? Colors.black : Colors.white,
+        // width: MediaQuery.of(context).size.width * 0.40,
+        child: FittedBox(
+          fit: BoxFit.cover,
+          child: Text(
+            _tags[index],
+            style: TextStyle(
+              color: widget.index != index ? Colors.black : Colors.white,
+              // fontSize: 30,
+            ),
+            overflow: TextOverflow.ellipsis,
           ),
         ),
       ),

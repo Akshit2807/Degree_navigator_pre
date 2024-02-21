@@ -1,17 +1,17 @@
-import 'package:untitled2/constants/color.dart';
-import 'package:untitled2/models/course.dart';
 import 'package:untitled2/screens/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class CourseScreen extends StatefulWidget {
-  const CourseScreen({Key? key}) : super(key: key);
+import '../../models/courseS2.dart';
+
+class CourseSemester2 extends StatefulWidget {
+  const CourseSemester2({Key? key}) : super(key: key);
 
   @override
-  _CourseScreenState createState() => _CourseScreenState();
+  _CourseSemester2State createState() => _CourseSemester2State();
 }
 
-class _CourseScreenState extends State<CourseScreen> {
+class _CourseSemester2State extends State<CourseSemester2> {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -29,7 +29,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     children: [
                       Align(
                         child: Text(
-                          'Semester 1',
+                          'Semester 2',
                           style: Theme.of(context).textTheme.displayMedium,
                         ),
                       ),
@@ -59,10 +59,10 @@ class _CourseScreenState extends State<CourseScreen> {
                     shrinkWrap: true,
                     itemBuilder: (_, int index) {
                       return CourseContainer(
-                        course: courses[index],
+                        course: courses2[index],
                       );
                     },
-                    itemCount: courses.length,
+                    itemCount: courses2.length,
                   ),
                 ),
               ],
@@ -75,7 +75,7 @@ class _CourseScreenState extends State<CourseScreen> {
 }
 
 class CourseContainer extends StatelessWidget {
-  final Course course;
+  final CourseS2 course;
   const CourseContainer({
     Key? key,
     required this.course,
@@ -88,8 +88,8 @@ class CourseContainer extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) => DetailsScreen(
-                    title: course.name,
-                  ))),
+                title: course.name,
+              ))),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),

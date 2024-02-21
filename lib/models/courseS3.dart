@@ -1,32 +1,32 @@
-class Course {
+class CourseS3 {
   String name;
   String author;
   String thumbnail;
 
-  Course({
+  CourseS3({
     required this.author,
     required this.name,
     required this.thumbnail,
   });
 }
 
-List<Course> courses = [
-  Course(
+List<CourseS3> courses3 = [
+  CourseS3(
     author: "AKAD",
     name: "Engineering Mathematics",
     thumbnail: "assets/icons/flutter.jpg",
   ),
-  Course(
+  CourseS3(
     author: "AKAD",
     name: "Engineering Physics",
     thumbnail: "assets/icons/react.jpg",
   ),
-  Course(
+  CourseS3(
     author: "AKAD",
     name: "FCP",
     thumbnail: "assets/icons/node.png",
   ),
-  Course(
+  CourseS3(
     author: "AKAD",
     name: "FEE",
     thumbnail: "assets/icons/flutter.jpg",
