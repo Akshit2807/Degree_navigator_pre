@@ -1,9 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:untitled2/Activity/loading.dart';
 import 'package:untitled2/screens/base_screen.dart';
-// import 'package:untitled2/Activity/loading.dart';
-import 'package:untitled2/Activity/login.dart';
-import 'package:untitled2/Activity/sign_up.dart';
+import 'package:flutter/material.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,6 +8,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,12 +38,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: '/',
-      routes: {
-      "/": (context) => const Loading(),
-      "/login": (context) =>const  Login(),
-      "/sign_up": (context) =>const SignUp()
-    },
       home: const BaseScreen(),
     );
   }
