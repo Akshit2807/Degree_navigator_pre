@@ -16,9 +16,9 @@ class _BaseScreenState extends State<BaseScreen> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     FeaturedScreen(),
-    FeaturedScreen(),
-    FeaturedScreen(),
-    FeaturedScreen(),
+    // FeaturedScreen(),
+    // FeaturedScreen(),
+    // FeaturedScreen(),
   ];
   @override
   Widget build(BuildContext context) {

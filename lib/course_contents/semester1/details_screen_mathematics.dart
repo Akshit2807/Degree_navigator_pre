@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
-import '../widgets/lesson_card.dart';
+import '../../widgets/lesson_card.dart';
 
 class DetailsScreen extends StatefulWidget {
   final String title;
@@ -45,7 +45,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     children: [
                       Align(
                         child: Text(
-                          "Flutter",
+                          "Semester 1",
                           style: Theme.of(context).textTheme.displayMedium,
                         ),
                       ),
@@ -69,7 +69,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   height: 15,
                 ),
                 const Text(
-                  "Futter Novice to Ninja",
+                  "Engineering Mathematics",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 18,
@@ -118,14 +118,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ),
                     ),
                     const Spacer(),
-                    const Text(
-                      " \$40",
-                      style: TextStyle(
-                        color: kPrimaryColor,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20,
-                      ),
-                    ),
                   ],
                 ),
                 const SizedBox(
@@ -139,17 +131,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
               ],
             ),
           ),
-        ),
-        bottomSheet: BottomSheet(
-          onClosing: () {},
-          backgroundColor: Colors.white,
-          enableDrag: false,
-          builder: (context) {
-            return const SizedBox(
-              height: 80,
-              child: EnrollBottomSheet(),
-            );
-          },
         ),
       ),
     );
@@ -242,66 +223,21 @@ class _CustomTabViewState extends State<CustomTabView> {
         borderRadius: BorderRadius.circular(12),
         color: Colors.grey.shade200,
       ),
-      child: Row(
-        children: _tags
-            .asMap()
-            .entries
-            .map((MapEntry map) => _buildTags(map.key))
-            .toList(),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: _tags
+              .asMap()
+              .entries
+              .map((MapEntry map) => _buildTags(map.key))
+              .toList(),
+        ),
       ),
     );
   }
 }
 
-class EnrollBottomSheet extends StatefulWidget {
-  const EnrollBottomSheet({Key? key}) : super(key: key);
 
-  @override
-  _EnrollBottomSheetState createState() => _EnrollBottomSheetState();
-}
-
-class _EnrollBottomSheetState extends State<EnrollBottomSheet> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 30.0,
-      ),
-      child: Row(
-        children: [
-          CustomIconButton(
-            onTap: () {},
-            height: 45,
-            width: 45,
-            child: const Icon(
-              Icons.favorite,
-              color: Colors.pink,
-              size: 30,
-            ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          Expanded(
-            child: CustomIconButton(
-              onTap: () {},
-              color: kPrimaryColor,
-              height: 45,
-              width: 45,
-              child: const Text(
-                "Enroll Now",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
 
 class CustomIconButton extends StatelessWidget {
   final Widget child;

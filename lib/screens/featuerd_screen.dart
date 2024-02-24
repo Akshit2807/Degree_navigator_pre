@@ -24,11 +24,15 @@ class _FeaturedScreenState extends State<FeaturedScreen> {
     return const AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
-        body: Column(
-          children: [
-            AppBar(),
-            Body(),
-          ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          reverse: true,
+          child: Column(
+            children: [
+              AppBar(),
+              Body(),
+            ],
+          ),
         ),
       ),
     );
@@ -40,50 +44,53 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Explore Categories",
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "See All",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(color: kPrimaryColor),
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Explore Categories",
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
-              )
-            ],
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "See All",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: kPrimaryColor),
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-        GridView.builder(
-          shrinkWrap: true,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 8,
+          GridView.builder(
+            shrinkWrap: true,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 8,
+            ),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.8,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 24,
+            ),
+            itemBuilder: (context, index) {
+              return CategoryCard(
+                category: categoryList[index],
+              );
+            },
+            itemCount: categoryList.length,
           ),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 0.8,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 24,
-          ),
-          itemBuilder: (context, index) {
-            return CategoryCard(
-              category: categoryList[index],
-            );
-          },
-          itemCount: categoryList.length,
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -151,10 +158,10 @@ class CategoryCard extends StatelessWidget {
           ],
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Align(
-              // alignment: Alignment.topRight,
+              alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(top: 4.0),
                 child: ClipRRect(

@@ -1,5 +1,5 @@
 import 'package:untitled2/models/courseS1.dart';
-import 'package:untitled2/screens/details_screen.dart';
+import 'package:untitled2/course_contents/semester1/details_screen_mathematics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
