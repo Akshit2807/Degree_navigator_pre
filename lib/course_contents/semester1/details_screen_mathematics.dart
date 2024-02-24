@@ -4,7 +4,6 @@ import 'package:untitled2/models/lesson.dart';
 import 'package:untitled2/widgets/custom_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:video_player/video_player.dart';
 
 import '../../widgets/lesson_card.dart';
 
@@ -64,7 +63,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 const SizedBox(
                   height: 25,
                 ),
+
+
                 const CustomVideoPlayer(),
+
+
                 const SizedBox(
                   height: 15,
                 ),

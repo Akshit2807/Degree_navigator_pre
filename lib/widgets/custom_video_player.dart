@@ -1,6 +1,7 @@
-import 'package:untitled2/constants/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+
+import '../constants/icons.dart';
 
 class CustomVideoPlayer extends StatefulWidget {
   const CustomVideoPlayer({
@@ -18,9 +19,12 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(
-      'assets/videos/FCPvideo (1080p).mp4',
+    _controller = VideoPlayerController.network(
+      'https://download-video.akamaized.net/v3-1/playback/31e026a5-d8b9-4bfd-b7e5-97a759a7f0c1/c2831d0a?__token__=st=1708787874~exp=1708802274~acl=%2Fv3-1%2Fplayback%2F31e026a5-d8b9-4bfd-b7e5-97a759a7f0c1%2Fc2831d0a%2A~hmac=2acfaf3aac4a8f786daaf807fc3ede7c4a78a26d5de319370a067d1f84fffc94&r=dXMtY2VudHJhbDE%3D',
     )
+    // _controller = VideoPlayerController.asset(
+    //   'assets/videos/25666164.mp4',
+    // )
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
@@ -39,7 +43,7 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
             ),
           );
         } else if (_controller.value.position.inMilliseconds -
-                _controller.value.duration.inMilliseconds <
+            _controller.value.duration.inMilliseconds <
             1) {
           setState(() {
             controls = GestureDetector(
