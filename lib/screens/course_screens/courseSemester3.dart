@@ -1,8 +1,8 @@
-import 'package:untitled2/course_contents/semester1/details_screen_mathematics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../models/courseS3.dart';
+import '../detail_screens/semester1/details_screen_mathematics.dart';
 
 class CourseSemester3 extends StatefulWidget {
   const CourseSemester3({Key? key}) : super(key: key);
@@ -87,7 +87,7 @@ class CourseContainer extends StatelessWidget {
       onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => DetailsScreen(
+              builder: (context) => DetailsScreenMathematics(
                 title: course.name,
               ))),
       child: Container(
@@ -131,6 +131,47 @@ class CourseContainer extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CustomIconButton extends StatelessWidget {
+  final Widget child;
+  final double height;
+  final double width;
+  final Color? color;
+  final VoidCallback onTap;
+
+  const CustomIconButton({
+    Key? key,
+    required this.child,
+    required this.height,
+    required this.width,
+    this.color = Colors.white,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Ink(
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        child: Center(child: child),
+        onTap: onTap,
+      ),
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(.1),
+            blurRadius: 2.0,
+            spreadRadius: .05,
+          ), //BoxShadow
+        ],
       ),
     );
   }

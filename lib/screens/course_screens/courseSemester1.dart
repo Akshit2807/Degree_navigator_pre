@@ -1,7 +1,12 @@
 import 'package:untitled2/models/courseS1.dart';
-import 'package:untitled2/course_contents/semester1/details_screen_mathematics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../detail_screens/semester1/details_screen_FCP.dart';
+import '../detail_screens/semester1/details_screen_FEE.dart';
+import '../detail_screens/semester1/details_screen_mathematics.dart';
+import '../detail_screens/semester1/details_screen_physics.dart';
+
 
 class CourseSemester1 extends StatefulWidget {
   const CourseSemester1({Key? key}) : super(key: key);
@@ -83,12 +88,59 @@ class CourseContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => DetailsScreen(
-                    title: course.name,
-                  ))),
+      // onTap: () => Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => DetailsScreen(
+      //       title: course.name,
+      //     ),
+      //   ),
+      // ),
+
+      onTap: () {
+        // Conditionally navigate based on category.thumbnail
+        if (course.name == 'Engineering Mathematics') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailsScreenMathematics(
+                title: course.name,
+              ),
+            ),
+          );
+        }
+        else if (course.name == 'Engineering Physics') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailsScreenPhysics(
+                title: course.name,
+              ),
+            ),
+          );
+        }
+        else if (course.name == 'FCP') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailsScreenFCP(
+                title: course.name,
+              ),
+            ),
+          );
+        }
+        else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailsScreenFEE(
+                title: course.name,
+              ),
+            ),
+          );
+        }
+        },
+
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -130,6 +182,48 @@ class CourseContainer extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+}
+
+class CustomIconButton extends StatelessWidget {
+  final Widget child;
+  final double height;
+  final double width;
+  final Color? color;
+  final VoidCallback onTap;
+
+  const CustomIconButton({
+    Key? key,
+    required this.child,
+    required this.height,
+    required this.width,
+    this.color = Colors.white,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Ink(
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(.1),
+            blurRadius: 2.0,
+            spreadRadius: .05,
+          ), //BoxShadow
+        ],
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: onTap,
+        child: Center(child: child),
       ),
     );
   }

@@ -1,24 +1,27 @@
-import 'package:untitled2/constants/color.dart';
 import 'package:untitled2/constants/icons.dart';
 import 'package:untitled2/models/lesson.dart';
 import 'package:untitled2/widgets/custom_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:video_player/video_player.dart';
 
-import '../../widgets/lesson_card.dart';
+import '../../../constants/color.dart';
+import '../../../widgets/custom_icon_button.dart';
+import '../../../widgets/lesson_card.dart';
 
-class DetailsScreen extends StatefulWidget {
+
+class DetailsScreenPhysics extends StatefulWidget {
   final String title;
-  const DetailsScreen({
+  const DetailsScreenPhysics({
     Key? key,
     required this.title,
   }) : super(key: key);
 
   @override
-  _DetailsScreenState createState() => _DetailsScreenState();
+  _DetailsScreenPhysicsState createState() => _DetailsScreenPhysicsState();
 }
 
-class _DetailsScreenState extends State<DetailsScreen> {
+class _DetailsScreenPhysicsState extends State<DetailsScreenPhysics> {
   int _selectedTag = 0;
 
   void changeTab(int index) {
@@ -63,16 +66,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 const SizedBox(
                   height: 25,
                 ),
-
-
-                const CustomVideoPlayer(),
-
-
+                const CustomVideoPlayer(videoUrl: 'https://vod-progressive.akamaized.net/exp=1708826776~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2331%2F8%2F211655655%2F726851728.mp4~hmac=565536daaa5e50939f627373bd007430257bb221f6e368ba184cc891b53facf0/vimeo-prod-skyfire-std-us/01/2331/8/211655655/726851728.mp4?filename=file.mp4',),
                 const SizedBox(
                   height: 15,
                 ),
                 const Text(
-                  "Engineering Mathematics",
+                  "Engineering Physics",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 18,
@@ -121,6 +120,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ),
                     ),
                     const Spacer(),
+                    const Text(
+                      " \$40",
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -134,6 +141,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
               ],
             ),
           ),
+        ),
+        bottomSheet: BottomSheet(
+          onClosing: () {},
+          backgroundColor: Colors.white,
+          enableDrag: false,
+          builder: (context) {
+            return const SizedBox(
+              height: 80,
+              child: EnrollBottomSheet(),
+            );
+          },
         ),
       ),
     );
@@ -240,45 +258,53 @@ class _CustomTabViewState extends State<CustomTabView> {
   }
 }
 
-
-
-class CustomIconButton extends StatelessWidget {
-  final Widget child;
-  final double height;
-  final double width;
-  final Color? color;
-  final VoidCallback onTap;
-
-  const CustomIconButton({
-    Key? key,
-    required this.child,
-    required this.height,
-    required this.width,
-    this.color = Colors.white,
-    required this.onTap,
-  }) : super(key: key);
+class EnrollBottomSheet extends StatefulWidget {
+  const EnrollBottomSheet({Key? key}) : super(key: key);
 
   @override
+  _EnrollBottomSheetState createState() => _EnrollBottomSheetState();
+}
+
+class _EnrollBottomSheetState extends State<EnrollBottomSheet> {
+  @override
   Widget build(BuildContext context) {
-    return Ink(
-      child: InkWell(
-        borderRadius: BorderRadius.circular(12),
-        child: Center(child: child),
-        onTap: onTap,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 30.0,
       ),
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(.1),
-            blurRadius: 2.0,
-            spreadRadius: .05,
-          ), //BoxShadow
+      child: Row(
+        children: [
+          CustomIconButton(
+            onTap: () {},
+            height: 45,
+            width: 45,
+            child: const Icon(
+              Icons.favorite,
+              color: Colors.pink,
+              size: 30,
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          Expanded(
+            child: CustomIconButton(
+              onTap: () {},
+              color: kPrimaryColor,
+              height: 45,
+              width: 45,
+              child: const Text(
+                "Enroll Now",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
   }
 }
+

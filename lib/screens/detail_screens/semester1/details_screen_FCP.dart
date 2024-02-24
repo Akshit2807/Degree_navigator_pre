@@ -5,21 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
-import '../../constants/color.dart';
-import '../../widgets/lesson_card.dart';
+import '../../../constants/color.dart';
+import '../../../widgets/custom_icon_button.dart';
+import '../../../widgets/lesson_card.dart';
 
-class DetailsScreen extends StatefulWidget {
+
+class DetailsScreenFCP extends StatefulWidget {
   final String title;
-  const DetailsScreen({
+  const DetailsScreenFCP({
     Key? key,
     required this.title,
   }) : super(key: key);
 
   @override
-  _DetailsScreenState createState() => _DetailsScreenState();
+  _DetailsScreenFCPState createState() => _DetailsScreenFCPState();
 }
 
-class _DetailsScreenState extends State<DetailsScreen> {
+class _DetailsScreenFCPState extends State<DetailsScreenFCP> {
   int _selectedTag = 0;
 
   void changeTab(int index) {
@@ -45,7 +47,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     children: [
                       Align(
                         child: Text(
-                          "Flutter",
+                          "Semester 1",
                           style: Theme.of(context).textTheme.displayMedium,
                         ),
                       ),
@@ -64,12 +66,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 const SizedBox(
                   height: 25,
                 ),
-                const CustomVideoPlayer(),
+                const CustomVideoPlayer(videoUrl: 'https://download-video.akamaized.net/v3-1/playback/31e026a5-d8b9-4bfd-b7e5-97a759a7f0c1/c2831d0a?__token__=st=1708787874~exp=1708802274~acl=%2Fv3-1%2Fplayback%2F31e026a5-d8b9-4bfd-b7e5-97a759a7f0c1%2Fc2831d0a%2A~hmac=2acfaf3aac4a8f786daaf807fc3ede7c4a78a26d5de319370a067d1f84fffc94&r=dXMtY2VudHJhbDE%3D',),
                 const SizedBox(
                   height: 15,
                 ),
                 const Text(
-                  "Futter Novice to Ninja",
+                  "Fundamental of Computer Programming",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 18,
@@ -306,43 +308,3 @@ class _EnrollBottomSheetState extends State<EnrollBottomSheet> {
   }
 }
 
-class CustomIconButton extends StatelessWidget {
-  final Widget child;
-  final double height;
-  final double width;
-  final Color? color;
-  final VoidCallback onTap;
-
-  const CustomIconButton({
-    Key? key,
-    required this.child,
-    required this.height,
-    required this.width,
-    this.color = Colors.white,
-    required this.onTap,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Ink(
-      child: InkWell(
-        borderRadius: BorderRadius.circular(12),
-        child: Center(child: child),
-        onTap: onTap,
-      ),
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(.1),
-            blurRadius: 2.0,
-            spreadRadius: .05,
-          ), //BoxShadow
-        ],
-      ),
-    );
-  }
-}
