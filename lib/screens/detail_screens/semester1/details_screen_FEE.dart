@@ -1,5 +1,5 @@
 import 'package:Degree_Navigator/constants/icons.dart';
-import 'package:Degree_Navigator/models/lesson.dart';
+import 'package:Degree_Navigator/models/lessonS1.dart';
 import 'package:Degree_Navigator/widgets/custom_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

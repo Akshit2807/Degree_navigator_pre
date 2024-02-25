@@ -1,13 +1,12 @@
 import 'package:Degree_Navigator/constants/color.dart';
 import 'package:Degree_Navigator/constants/icons.dart';
-import 'package:Degree_Navigator/models/lesson.dart';
+import 'package:Degree_Navigator/models/lessonS1.dart';
 import 'package:Degree_Navigator/widgets/custom_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../widgets/custom_icon_button.dart';
 import '../../../widgets/lesson_card.dart';
-
 
 class DetailsScreenMathematics extends StatefulWidget {
   final String title;
@@ -65,13 +64,9 @@ class _DetailsScreenMathematicsState extends State<DetailsScreenMathematics> {
                 const SizedBox(
                   height: 25,
                 ),
-
-
-                const CustomVideoPlayer(
-                    videoUrl: 'https://4n23bj-my.sharepoint.com/personal/iiitb_akshit005_onmicrosoft_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fiiitb%5Fakshit005%5Fonmicrosoft%5Fcom%2FDocuments%2Fvideos%2F25666164%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview'
+                CustomVideoPlayer(
+                    videoUrl: 'https://youtube.com/playlist?list=PLoDcspGdb8UjYrAzB8DnBUmcrG-3oq-Tb&si=GXUjG5sJerBH3XI6'
                 ),
-
-
                 const SizedBox(
                   height: 15,
                 ),
@@ -86,7 +81,7 @@ class _DetailsScreenMathematicsState extends State<DetailsScreenMathematics> {
                   height: 3,
                 ),
                 const Text(
-                  "By DegreeNavigator",
+                  "Created by DegreeNavigator",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
@@ -94,6 +89,38 @@ class _DetailsScreenMathematicsState extends State<DetailsScreenMathematics> {
                 ),
                 const SizedBox(
                   height: 3,
+                ),
+                Row(
+                  children: [
+                    Image.asset(
+                      icFeaturedOutlined,
+                      height: 20,
+                    ),
+                    const Text(
+                      " 4.8",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    const Icon(
+                      Icons.timer,
+                      color: Colors.grey,
+                    ),
+                    const Text(
+                      " 72 Hours",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const Spacer(),
+                  ],
                 ),
                 const SizedBox(
                   height: 15,
@@ -211,6 +238,3 @@ class _CustomTabViewState extends State<CustomTabView> {
     );
   }
 }
-
-
-
