@@ -1,4 +1,4 @@
-name: untitled2
+name: Degree_Navigator
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -39,6 +39,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/appiconwhite.png"
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

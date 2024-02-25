@@ -1,7 +1,7 @@
-import 'package:untitled2/constants/color.dart';
-import 'package:untitled2/constants/icons.dart';
-import 'package:untitled2/constants/size.dart';
-import 'package:untitled2/screens/featuerd_screen.dart';
+import 'package:Degree_Navigator/constants/color.dart';
+import 'package:Degree_Navigator/constants/icons.dart';
+import 'package:Degree_Navigator/constants/size.dart';
+import 'package:Degree_Navigator/screens/featuerd_screen.dart';
 import 'package:flutter/material.dart';
 
 class BaseScreen extends StatefulWidget {

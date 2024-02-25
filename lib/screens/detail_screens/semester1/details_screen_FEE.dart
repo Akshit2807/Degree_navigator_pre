@@ -1,6 +1,6 @@
-import 'package:untitled2/constants/icons.dart';
-import 'package:untitled2/models/lesson.dart';
-import 'package:untitled2/widgets/custom_video_player.dart';
+import 'package:Degree_Navigator/constants/icons.dart';
+import 'package:Degree_Navigator/models/lesson.dart';
+import 'package:Degree_Navigator/widgets/custom_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
@@ -81,7 +81,7 @@ class _DetailsScreenFEEState extends State<DetailsScreenFEE> {
                   height: 3,
                 ),
                 const Text(
-                  "Created by DegreeNavigator",
+                  "By DegreeNavigator",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
@@ -89,46 +89,6 @@ class _DetailsScreenFEEState extends State<DetailsScreenFEE> {
                 ),
                 const SizedBox(
                   height: 3,
-                ),
-                Row(
-                  children: [
-                    Image.asset(
-                      icFeaturedOutlined,
-                      height: 20,
-                    ),
-                    const Text(
-                      " 4.8",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    const Icon(
-                      Icons.timer,
-                      color: Colors.grey,
-                    ),
-                    const Text(
-                      " 72 Hours",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                      ),
-                    ),
-                    const Spacer(),
-                    const Text(
-                      " \$40",
-                      style: TextStyle(
-                        color: kPrimaryColor,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
                 ),
                 const SizedBox(
                   height: 15,
@@ -141,17 +101,6 @@ class _DetailsScreenFEEState extends State<DetailsScreenFEE> {
               ],
             ),
           ),
-        ),
-        bottomSheet: BottomSheet(
-          onClosing: () {},
-          backgroundColor: Colors.white,
-          enableDrag: false,
-          builder: (context) {
-            return const SizedBox(
-              height: 80,
-              child: EnrollBottomSheet(),
-            );
-          },
         ),
       ),
     );
@@ -258,53 +207,5 @@ class _CustomTabViewState extends State<CustomTabView> {
   }
 }
 
-class EnrollBottomSheet extends StatefulWidget {
-  const EnrollBottomSheet({Key? key}) : super(key: key);
 
-  @override
-  _EnrollBottomSheetState createState() => _EnrollBottomSheetState();
-}
-
-class _EnrollBottomSheetState extends State<EnrollBottomSheet> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 30.0,
-      ),
-      child: Row(
-        children: [
-          CustomIconButton(
-            onTap: () {},
-            height: 45,
-            width: 45,
-            child: const Icon(
-              Icons.favorite,
-              color: Colors.pink,
-              size: 30,
-            ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          Expanded(
-            child: CustomIconButton(
-              onTap: () {},
-              color: kPrimaryColor,
-              height: 45,
-              width: 45,
-              child: const Text(
-                "Enroll Now",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
 

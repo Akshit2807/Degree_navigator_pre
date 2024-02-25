@@ -1,4 +1,4 @@
-import 'package:untitled2/constants/color.dart';
+import 'package:Degree_Navigator/constants/color.dart';
 import 'package:flutter/material.dart';
 
 class SearchTextField extends StatelessWidget {

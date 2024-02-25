@@ -1,7 +1,7 @@
-import 'package:untitled2/constants/color.dart';
-import 'package:untitled2/constants/icons.dart';
-import 'package:untitled2/models/lesson.dart';
-import 'package:untitled2/widgets/custom_video_player.dart';
+import 'package:Degree_Navigator/constants/color.dart';
+import 'package:Degree_Navigator/constants/icons.dart';
+import 'package:Degree_Navigator/models/lesson.dart';
+import 'package:Degree_Navigator/widgets/custom_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -68,7 +68,7 @@ class _DetailsScreenMathematicsState extends State<DetailsScreenMathematics> {
 
 
                 const CustomVideoPlayer(
-                    videoUrl: 'https://download-video.akamaized.net/v3-1/playback/31e026a5-d8b9-4bfd-b7e5-97a759a7f0c1/c2831d0a?__token__=st=1708812059~exp=1708826459~acl=%2Fv3-1%2Fplayback%2F31e026a5-d8b9-4bfd-b7e5-97a759a7f0c1%2Fc2831d0a%2A~hmac=e663ced034a775f24fa00e92a1bd10ff868a19ad1058d38b0a4c21c0fdd1880c&r=dXMtY2VudHJhbDE%3D'
+                    videoUrl: 'https://4n23bj-my.sharepoint.com/personal/iiitb_akshit005_onmicrosoft_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fiiitb%5Fakshit005%5Fonmicrosoft%5Fcom%2FDocuments%2Fvideos%2F25666164%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview'
                 ),
 
 
@@ -86,7 +86,7 @@ class _DetailsScreenMathematicsState extends State<DetailsScreenMathematics> {
                   height: 3,
                 ),
                 const Text(
-                  "Created by DegreeNavigator",
+                  "By DegreeNavigator",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
@@ -94,38 +94,6 @@ class _DetailsScreenMathematicsState extends State<DetailsScreenMathematics> {
                 ),
                 const SizedBox(
                   height: 3,
-                ),
-                Row(
-                  children: [
-                    Image.asset(
-                      icFeaturedOutlined,
-                      height: 20,
-                    ),
-                    const Text(
-                      " 4.8",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    const Icon(
-                      Icons.timer,
-                      color: Colors.grey,
-                    ),
-                    const Text(
-                      " 72 Hours",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                      ),
-                    ),
-                    const Spacer(),
-                  ],
                 ),
                 const SizedBox(
                   height: 15,

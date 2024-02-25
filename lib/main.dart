@@ -1,4 +1,4 @@
-import 'package:untitled2/screens/base_screen.dart';
+import 'package:Degree_Navigator/screens/base_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,7 +38,29 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const BaseScreen(),
+      home: SplashScreen(),
     );
   }
 }
+
+class SplashScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Simulate loading delay
+    Future.delayed(Duration(seconds: 2), () {
+      // Once loading is complete, navigate to the main screen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => BaseScreen()),
+      );
+    });
+
+    // Show loading indicator
+    return Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+}
+

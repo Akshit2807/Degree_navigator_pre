@@ -1,4 +1,4 @@
-# untitled2
+# Degree_Navigator
 
 A new Flutter project.
 

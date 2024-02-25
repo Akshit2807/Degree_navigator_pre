@@ -1,4 +1,4 @@
-import 'package:untitled2/models/courseS1.dart';
+import 'package:Degree_Navigator/models/courseS1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

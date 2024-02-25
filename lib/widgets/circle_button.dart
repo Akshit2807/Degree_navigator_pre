@@ -1,5 +1,7 @@
-import 'package:untitled2/constants/color.dart';
+import 'package:Degree_Navigator/constants/color.dart';
 import 'package:flutter/material.dart';
+
+import '../constants/color.dart';
 
 class CircleButton extends StatelessWidget {
   final IconData icon;

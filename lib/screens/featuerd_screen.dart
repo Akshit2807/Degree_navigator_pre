@@ -1,6 +1,6 @@
-import 'package:untitled2/constants/color.dart';
-import 'package:untitled2/models/category.dart';
-import 'package:untitled2/widgets/circle_button.dart';
+import 'package:Degree_Navigator/constants/color.dart';
+import 'package:Degree_Navigator/models/category.dart';
+import 'package:Degree_Navigator/widgets/circle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

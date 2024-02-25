@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:untitled2/main.dart';
+import 'package:Degree_Navigator/main.dart';
 import 'package:dartx/dartx.dart';
 
 void main() {
